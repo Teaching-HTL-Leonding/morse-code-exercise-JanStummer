@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Morse Code Encoder</h1>
+
+  <label for="textInput">Enter text (A-Z only):</label>
+  <input
+    id="textInput"
+    [ngModel]="inputText()"
+    (ngModelChange)="inputText.set($event)"
+    placeholder="Enter text here"
+  />
+
+  <button
+    (click)="encodeText()"
+    [disabled]="!isValidInput()"
+  >
+    Encode
+  </button>
+
+  <label for="encodedMorse">Encoded Morse Code:</label>
+  <input
+    id="encodedMorse"
+    [value]="encodedMorse()"
+    readonly
+  />
+</div>
